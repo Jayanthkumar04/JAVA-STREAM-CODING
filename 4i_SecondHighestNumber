@@ -1,0 +1,24 @@
+// Online Java Compiler (Editor)
+// Write and run Java online using this editor.
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+
+             List<Integer> list = new ArrayList<>(Arrays.asList(20,10,10,45,30,45,5,20));
+
+
+             Optional ans =list.stream()
+                                     .distinct()
+                                     .sorted(Comparator.reverseOrder())
+                                     .skip(1)
+                                     .findFirst();
+
+            if(ans.isPresent())
+            System.out.println(ans.get());
+            else{
+                System.out.println("no answer");
+            }
+        
+    }
+}
