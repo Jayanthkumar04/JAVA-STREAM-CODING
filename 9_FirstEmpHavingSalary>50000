@@ -1,0 +1,50 @@
+import java.util.*;
+
+class Employee {
+    private String name;
+    private int age;
+    private double salary;
+
+    public Employee(String name, int age, double salary) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{name='" + name + "', age=" + age + ", salary=" + salary + "}";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<Employee> employees = Arrays.asList(
+                new Employee("Rahul", 25, 45000),
+                new Employee("Priya", 28, 52000),
+                new Employee("Arjun", 30, 65000),
+                new Employee("Sneha", 26, 48000),
+                new Employee("Vikram", 32, 75000)
+        );
+
+        Optional<Employee> result =  employees.stream()
+                                              .filter(x->x.getSalary() > 50000)
+                                              .findFirst();
+
+       if(result.isPresent()) sysout(result.get());
+       else sysout("no result");  
+    }
+}
