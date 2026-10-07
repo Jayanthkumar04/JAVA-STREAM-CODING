@@ -1,0 +1,27 @@
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+
+List<String> list = new ArrayList<>(
+    Arrays.asList("Java", "Spring", "Microservices", "Docker", "Kubernetes")
+);
+//Comparator.comparing(ele->ele.length())
+
+ Optional ans = list.stream()
+                    .max(Comparator.comparing(ele->ele.length());
+
+                    if(ans.isPresent())
+                    {
+                    sysout(ans.get());
+                    }
+                    else
+                    {
+                    sysout("no ans");
+                    }
+
+             
+
+        System.out.println(ans);
+    }
+}
