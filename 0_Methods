@@ -2,3 +2,8 @@ mapToInt();  sum();
 
 findFirst();
 
+ .collect(Collectors.partitioningBy(ele->ele%2 == 0)); // true -> .false->
+
+Comparator.comparing(ele->ele.length())
+.sorted(Comparator.comparingDouble(emp->-1*emp.getSalary()))
+
